@@ -912,6 +912,64 @@ small {
   margin-bottom: var(--space-lg);
 }
 
+/* Estilos específicos para páginas admin (Crear/Editar producto) */
+nav.admin-nav + .form-container {
+  margin-left: 270px;
+  align-items: flex-start;
+  min-height: auto;
+  padding: var(--space-2xl) var(--space-lg);
+  background: transparent;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto var(--space-lg);
+}
+
+.product-form {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  background: var(--color-fondo-blanco);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.product-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.product-form .form-group { width: 100%; }
+
+.form-acciones {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-top: var(--space-lg);
+}
+
+/* Responsive: forms en mobile se apilan */
+@media (max-width: 767px) {
+  nav.admin-nav + .form-container {
+    margin-left: 0;
+    padding: var(--space-lg);
+  }
+
+  .product-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-header { margin: 0 0 var(--space-md); }
+}
+
 .form-label {
   font-weight: 600;
   color: var(--color-texto-oscuro);
@@ -1046,9 +1104,31 @@ small {
   box-shadow: var(--shadow-md);
 }
 
+/* Mejora: centrar y controlar ancho de la sección de gestión */
+.gestion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gestion-acciones {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.gestion-tabla-wrapper {
+  overflow-x: auto;
+  border-radius: var(--border-radius-md);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+  padding: calc(var(--space-sm) * 0.5);
+}
+
 .gestion-tabla {
   width: 100%;
   border-collapse: collapse;
+  min-width: 900px;
 }
 
 .gestion-tabla thead {
@@ -1075,6 +1155,14 @@ small {
   display: flex;
   gap: var(--space-md);
   align-items: center;
+}
+
+.gestion-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
 }
 
 .action-edit,
